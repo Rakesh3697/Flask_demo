@@ -1,11 +1,13 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)   # allow frontend requests
 
 @app.route("/")
 def home():
     return jsonify({
-        "message": "Flask app deployed successfully on Render 🚀"
+        "message": "Backend connected successfully from Render 🚀"
     })
 
 @app.route("/about")
